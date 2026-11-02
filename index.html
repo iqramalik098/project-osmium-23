@@ -1,0 +1,307 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PROJECT OSMIUM 23</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #03040a;
+    color: #00ff9d;
+    font-family: 'Share Tech Mono', monospace;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 650px;
+    padding: 35px 22px;
+    text-align: center;
+    background: #080e19;
+    border: 1px solid #00ff9d66;
+    box-shadow: 0 0 35px #00ff9d22;
+}
+
+h1 {
+    font-size: clamp(28px, 7vw, 46px);
+    letter-spacing: 4px;
+    text-shadow: 0 0 15px #00ff9d;
+    margin-bottom: 15px;
+}
+
+.purple {
+    color: #a855f7;
+}
+
+.subtitle {
+    color: #38bdf8;
+    letter-spacing: 3px;
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+
+.terminal {
+    background: #0c1725;
+    border-left: 3px solid #a855f7;
+    padding: 20px;
+    text-align: left;
+    line-height: 2;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.terminal p:nth-child(even) {
+    color: #38bdf8;
+}
+
+button {
+    background: transparent;
+    color: #00ff9d;
+    border: 1px solid #00ff9d;
+    padding: 14px 25px;
+    font-family: inherit;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 8px;
+    transition: .3s;
+}
+
+button:hover {
+    background: #00ff9d;
+    color: black;
+    box-shadow: 0 0 25px #00ff9d;
+}
+
+input {
+    background: #03040a;
+    border: 1px solid #38bdf8;
+    padding: 14px;
+    color: white;
+    font-family: inherit;
+    width: 100%;
+    max-width: 300px;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.footer {
+    color: #a855f7;
+    font-size: 11px;
+    margin-top: 25px;
+}
+
+.white {
+    color: white;
+}
+
+#main {
+    animation: appear .7s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width:480px) {
+    .container {
+        padding: 25px 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="main">
+
+<h1>PROJECT <span class="purple">OSMIUM</span></h1>
+
+<p class="subtitle">OPERATION 23 // CLASSIFIED</p>
+
+<div class="terminal">
+<p>> Initializing classified system...</p>
+<p>> Loading friendship database...</p>
+<p>> Scanning subject identity...</p>
+<p>> Subject identified: OSMIUM</p>
+<p>> Age: 22</p>
+<p>> Friendship duration: 2 years</p>
+<p>> Overthinking detected: EXTREME</p>
+<p style="color:#00ff9d">> SYSTEM READY.</p>
+</div>
+
+<button onclick="start()">INITIALIZE SYSTEM →</button>
+
+<p class="footer">
+WARNING: HIGH LEVELS OF ROASTING DETECTED.
+</p>
+
+</div>
+
+<script>
+
+function start() {
+
+document.getElementById("main").innerHTML = `
+
+<h1>SYSTEM <span class="purple">ONLINE</span></h1>
+
+<p class="subtitle">IDENTITY VERIFICATION REQUIRED</p>
+
+<div class="terminal">
+<p>> Welcome, Subject Osmium.</p>
+<p>> Your classified files are waiting.</p>
+<p>> Prove your identity to continue.</p>
+<br>
+<p class="white">Enter your secret password:</p>
+</div>
+
+<input type="password" id="password" placeholder="ENTER PASSWORD">
+
+<br>
+
+<button onclick="verify()">UNLOCK FILES →</button>
+
+<p id="error" style="color:#ff5555;margin-top:15px;"></p>
+
+`;
+
+document.getElementById("password").addEventListener("keydown", function(e) {
+    if(e.key === "Enter") verify();
+});
+
+}
+
+function verify() {
+
+let password = document.getElementById("password").value;
+
+if(password === "osmium23") {
+report();
+} else {
+document.getElementById("error").innerText = "ACCESS DENIED. TRY AGAIN.";
+}
+
+}
+
+function report() {
+
+document.getElementById("main").innerHTML = `
+
+<h1>PSYCHOLOGICAL <span class="purple">REPORT</span></h1>
+
+<p class="subtitle">SUBJECT: OSMIUM | FILE NO. 023</p>
+
+<div class="terminal">
+<p>> Age: 22</p>
+<p>> Overthinking: 9999%</p>
+<p>> Roasting skills: Dangerous</p>
+<p>> Emotional intelligence: Classified</p>
+<p>> Loyalty: 100%</p>
+<p>> Drama level: Unmeasurable</p>
+<br>
+<p class="white">FINAL DIAGNOSIS:</p>
+<p>A rare human specimen.</p>
+<p>Handle with sarcasm and care.</p>
+</div>
+
+<button onclick="memory()">OPEN MEMORY VAULT →</button>
+
+`;
+
+}
+
+function memory() {
+
+document.getElementById("main").innerHTML = `
+
+<h1>MEMORY <span class="purple">VAULT</span></h1>
+
+<p class="subtitle">TWO YEARS. COUNTLESS MEMORIES.</p>
+
+<div class="terminal">
+<p>> File 001: Our funniest moments.</p>
+<p>> File 002: Our stupidest conversations.</p>
+<p>> File 003: Things I'll always remember.</p>
+<p>> File 004: Things I never said.</p>
+<br>
+<p class="white">
+Some people become memories.<br>
+Some people become a permanent part<br>
+of your story.
+</p>
+</div>
+
+<button onclick="finalMessage()">OPEN FINAL FILE →</button>
+
+`;
+
+}
+
+function finalMessage() {
+
+document.getElementById("main").innerHTML = `
+
+<h1>FINAL <span class="purple">FILE</span></h1>
+
+<p class="subtitle">A MESSAGE FOR OSMIUM</p>
+
+<div class="terminal">
+<p class="white">
+Two years ago, I didn't know how important
+this friendship would become.
+</p>
+<br>
+<p class="white">
+You're a professional overthinker,
+an expert roaster and occasionally
+a walking headache.
+</p>
+<br>
+<p class="white">
+But seriously, I hope you never forget
+that you matter, that you're appreciated,
+and that you don't have to figure
+everything out alone.
+</p>
+<br>
+<p style="color:#00ff9d">
+THANK YOU FOR BEING YOU.
+</p>
+</div>
+
+<h2 style="color:#a855f7">END OF OPERATION 23.</h2>
+
+<p class="footer">
+PROJECT OSMIUM // MISSION COMPLETE.
+</p>
+
+`;
+
+}
+
+</script>
+
+</body>
+</html>
+```
